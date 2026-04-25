@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
     padding: 0;
     margin: 0;
@@ -5,6 +8,8 @@ body{
     scroll-behavior: smooth;
 }
 .container{
+    width: 100%;
+    max-width: 1600px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     display: flex;
@@ -12,21 +17,27 @@ body{
     align-items: center;
     position: relative;
 }
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 header{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+    width: 90vw;
+    border-radius: 30px;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 8px 30px;
     z-index: 999;
     background-color: #4b4b4b5b;
     backdrop-filter: blur(10px);
 }
-
 .head-left{
     display: flex;
     align-items: center;
@@ -34,13 +45,13 @@ header{
 .head-left img{
     width: 40px;
     height: 40px;
-    margin-right: 20px;
+    margin-right: 15px;
 }
 
 .head-left button{
     border: none;
     padding: 10px 30px;
-    border-radius: 20px;
+    border-radius: 15px;
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
@@ -49,16 +60,37 @@ header{
     opacity: 0.7;
 }
 
-.head-right{
+.head-right ul{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
-.head-right a{
+.head-right ul li{
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+.head-right ul li a{
     text-decoration: none;
-    padding-left: 25px;
     color: white;
     font-size: 15px;
 }
+.head-right ul li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* transform: translate(-50%); */
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: ease .2s;
+}
+.head-right ul li:hover::after{
+    width: 100%;
+}
+
 .hero-section{
     position: relative;
     width: 100%;
@@ -78,26 +110,27 @@ header{
 .hero-info{
     z-index: 1;
     position: absolute;
-    top: 80px;
-    left: 50px;
+    top: 70px;
+    width: 100%;
+    padding: 4rem;
+    height: 100vh;
 }
 .hero-info h1{
-    font-size: 120px;
+    font-size: clamp(4rem, 8vw, 8rem);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 900;
-    font-style: normal;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin: 30px 0 20px 0;
 }
 .hero-info p{
     color: white;
-    max-width: 210px;
+    max-width: 380px;
+    font-size: clamp(0.95rem, 1vw, 1.1rem);
 }
 .hero-info button{
     background-color: #edff66;
     border: 2px solid #edff66;
-    padding: 10px 40px;
-    border-radius: 20px;
+    padding: 10px 30px;
+    border-radius: 15px;
     cursor: pointer;
     color: black;
     transition: 0.3s;
@@ -108,20 +141,21 @@ header{
     box-shadow: 0 0 15px #edff66;
 }
 .gaming-text{
-    font-size: 120px;
+    font-size: clamp(4rem, 10vw, 8rem);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 0;
     position: absolute;
-    right: 20px;
-    bottom: 30px;
+    bottom: 4rem;
+    right: 4rem;
 }
 .next-btn{
     width: 200px;
     height: 200px;
     background-color: #edff66b6;
     position: absolute;
-    left: 45%;
-    bottom: 45%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -464,28 +498,28 @@ header{
 
 @media screen and (max-width: 650px) {
     header{
+        width: 95vw;
         padding: 0 10px;
+    }
+    .head-left img{
+        width: 25px;
+        height: 25px;
+        margin-right: 2px;
     }
     .head-left button{
         display: none;
     }
-    .head-right a{
-        padding: 0 10px;
+    .head-right ul li a{
         font-size: 12px;
-    }
-    .hero-info a{
-        font-size: 12px;
-        padding: 0 5px;
     }
     .hero-info{
-        left: 5%;
+        padding: 2rem;
     }
-    .hero-section h1{
-        font-size: 90px;
+    .hero-info h1{
+        font-size: 5rem;
     }
-    .next-btn{
-        left: 25%;
-        top: 40%;
+    .gaming-text{
+        right: 2rem;
     }
     .about-section{
         margin: 0;
