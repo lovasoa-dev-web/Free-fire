@@ -24,7 +24,7 @@ img{
 }
 
 header{
-    width: 90vw;
+    width: 90%;
     border-radius: 30px;
     position: fixed;
     top: 15px;
@@ -41,11 +41,11 @@ header{
 .head-left{
     display: flex;
     align-items: center;
+    gap: 2em;
 }
 .head-left img{
     width: 40px;
     height: 40px;
-    margin-right: 15px;
 }
 
 .head-left button{
@@ -90,7 +90,16 @@ header{
 .head-right ul li:hover::after{
     width: 100%;
 }
-
+.menu-icon{
+    display: none;
+    position: absolute;
+    right: 25px;
+}
+.menu-icon i{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
 .hero-section{
     position: relative;
     width: 100%;
@@ -454,7 +463,7 @@ header{
     0% {
         filter: blur(40px);
     }
-    40%,60% {
+    40%,90% {
         filter: blur(0px);
         transform: translateY(0px);
         opacity: 1;
@@ -496,102 +505,542 @@ header{
     }
 }
 
-@media screen and (max-width: 650px) {
+/*RESPONSIVE TABLETTE ET MOBILE*/
+
+/* TABLETTE: 768px - 1024px */
+@media (max-width: 1024px) {
     header{
-        width: 95vw;
-        padding: 0 10px;
+        width: 95%;
+        padding: 8px 20px;
     }
     .head-left img{
-        width: 25px;
-        height: 25px;
-        margin-right: 2px;
+        width: 35px;
+        height: 35px;
     }
     .head-left button{
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    .head-right ul{
+        gap: 15px;
+    }
+    .head-right ul li a{
+        font-size: 13px;
+    }
+    .hero-section {
+        height: 80vh;
+    }
+    .hero-info {
+        padding: 3rem 2rem;
+    }
+    .hero-info h1{
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        margin: 20px 0 15px 0;
+    }
+    .hero-info p{
+        max-width: 350px;
+        font-size: clamp(0.85rem, 0.9vw, 1rem);
+    }
+    .hero-info button{
+        padding: 8px 25px;
+        font-size: 14px;
+    }
+    .gaming-text{
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        bottom: 2rem;
+        right: 2rem;
+    }
+    .next-btn{
+        width: 150px;
+        height: 150px;
+        font-size: 20px;
+    }
+    .next-btn:hover{
+        width: 150px;
+        height: 150px;
+    }
+    .about-section{
+        margin-top: 100px;
+    }
+    .about-section h1{
+        font-size: 60px;
+        max-width: 900px;
+    }
+    .about-section h4{
+        font-size: 18px;
+        margin-top: 40px;
+    }
+    .about-section h5{
+        font-size: 14px;
+        max-width: 400px;
+    }
+    .image-box {
+        width: 300px;
+        height: 420px;
+    }
+    #stones-img1{
+        width: 12%;
+        left: 25%;
+    }
+    #stones-img2{
+        width: 14%;
+        right: 25%;
+    }
+    .info-section{
+        width: 85%;
+        margin-top: 80px;
+    }
+    .info-section h3{
+        font-size: 24px;
+    }
+    .info-section p{
+        font-size: 14px;
+    }
+    .info-cards{
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .card{
+        height: 35vh;
+    }
+    .card h1{
+        font-size: 45px;
+        top: 15px;
+    }
+    .card p{
+        font-size: 13px;
+        top: 70px;
+    }
+    .card button{
+        font-size: 12px;
+        padding: 8px 20px;
+        bottom: 3%;
+    }
+    .card:nth-child(1){
+        grid-column: span 1;
+    }
+    .card:nth-child(2){
+        grid-row: span 1;
+        height: 35vh;
+    }
+    .contact-section{
+        margin-top: 80px;
+    }
+    .contact-section p{
+        margin-top: 80px;
+        font-size: 12px;
+    }
+    .contact-section h1{
+        font-size: 50px;
+        max-width: 450px;
+    }
+    .contact-section .img1{
+        height: 300px;
+        right: 10px;
+    }
+    .contact-section .img2{
+        height: 150px;
+        left: 30px;
+    }
+    .contact-section .img3{
+        height: 180px;
+        width: 180px;
+    }
+    .contact-section button{
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+    .footer{
+        height: 80px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer p{
+        margin: 5px 20px;
+        font-size: 12px;
+    }
+    .footer ul{
+        margin-right: 0;
+    }
+}
+
+/* MOBILE: 480px - 768px */
+@media (max-width: 768px) {
+    header{
+        width: 95%;
+        padding: 10px 15px;
+        border-radius: 20px;
+        top: 10px;
+    }
+    .head-left{
+        gap: 1em;
+    }
+    .head-left img{
+        width: 30px;
+        height: 30px;
+    }
+    .head-left button{
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+    .head-right ul{
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: #0f1217;
+        padding: 15px;
+        border-radius: 10px;
+        width: 180px;
+        gap: 15px;
     }
     .head-right ul li a{
         font-size: 12px;
     }
+    .head-right ul.active{
+        display: flex;
+    }
+    .menu-icon{
+        display: block;
+    }
+    .menu-icon i{
+        font-size: 24px;
+    }
+    .hero-section{
+        height: 100vh;
+        margin-top: 50px;
+    }
     .hero-info{
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+        top: 50px;
     }
     .hero-info h1{
-        font-size: 5rem;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin: 15px 0 10px 0;
+    }
+    .hero-info p{
+        max-width: 280px;
+        font-size: clamp(0.8rem, 0.8vw, 0.95rem);
+        line-height: 1.4;
+    }
+    .hero-info button{
+        padding: 7px 20px;
+        font-size: 12px;
     }
     .gaming-text{
-        right: 2rem;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    .next-btn{
+        width: 120px;
+        height: 120px;
+        font-size: 14px;
+    }
+    .next-btn:hover{
+        width: 120px;
+        height: 120px;
     }
     .about-section{
-        margin: 0;
+        margin-top: 60px;
+        padding: 0 1rem;
     }
     .about-section h1{
-        font-size: 50px;
+        font-size: 36px;
+        max-width: 100%;
     }
-    .image-box {
-        width: 300px;
-        height: 500px;
+    .about-section h4{
+        font-size: 16px;
+        margin-top: 30px;
+    }
+    .about-section h5{
+        font-size: 13px;
+        max-width: 100%;
+        line-height: 20px;
+    }
+    .about-section p{
+        font-size: 11px;
+    }
+    .boite{
+        margin: 30px 0;
+    }
+    .image-box{
+        width: 250px;
+        height: 350px;
     }
     #stones-img1{
-        top: 15%;
-        left: 13%;
-        width: 13%;
+        width: 16%;
+        left: 18%;
     }
     #stones-img2{
-        top: 15%;
-        right: 13%;
-        width: 15%;
+        width: 18%;
+        right: 18%;
     }
-    .about-section h4, .about-section h5{
-        max-width: 350px;
-        text-align: center;
+    .info-section{
+        width: 90%;
+        margin-top: 60px;
+    }
+    .info-section h3{
+        font-size: 20px;
+    }
+    .info-section p{
+        font-size: 12px;
+        max-width: 100%;
+    }
+    .info-cards{
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
     .card{
-        height: 25vh;
-    }
-    .card:nth-child(2){
-        grid-row: span 2;
-        height: 52vh;
+        height: 30vh;
     }
     .card h1{
-        font-size: 40px;
-        max-width: 150px;
-    }
-    .info-cards {
-        grid-template-columns: auto;
+        font-size: 32px;
+        top: 12px;
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
     }
     .card p{
         font-size: 12px;
+        top: 65px;
+        max-width: 90%;
     }
-    .contact-section .img1{
-        width: 150px;
-        height: 200px;
-        right: 0px;
-        top: 20px;
+    .card button{
+        font-size: 11px;
+        padding: 6px 15px;
+        bottom: 3%;
     }
-    .contact-section .img2{
-        top: 30px;
-        left: -40px;
-        width: 180px;
-        height: 180px;
+    .card:nth-child(1){
+        grid-column: span 1;
+        height: 30vh;
     }
-    .contact-section .img3{
-        left: -40px;
-        bottom: 0px;
-        width: 180px;
-        height: 180px;
+    .card:nth-child(2){
+        grid-row: span 1;
+        height: 30vh;
+    }
+    .contact-section{
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding: 0 1rem;
+    }
+    .contact-section p{
+        margin-top: 60px;
+        font-size: 11px;
     }
     .contact-section h1{
-        font-size: 50px;
-        max-width: 220px;
+        font-size: 32px;
+        max-width: 100%;
+    }
+    .contact-section button{
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+    .contact-section .img1{
+        height: 200px;
+        right: 5px;
+        top: 15%;
+    }
+    .contact-section .img2{
+        height: 100px;
+        left: 10px;
+        top: 10px;
+    }
+    .contact-section .img3{
+        height: 120px;
+        width: 120px;
+        left: 2%;
+        bottom: 10%;
+    }
+    .footer{
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        align-items: flex-start;
     }
     .footer p{
-        display: none;
+        margin: 5px 0;
+        font-size: 11px;
     }
     .footer ul{
-        margin-left: 70px;
+        margin-right: 0;
+        margin-bottom: 10px;
     }
-    .stones-img{
-        width: 400px;
-        margin-top: 80%;
+    .footer a{
+        margin: 0 5px;
+        padding: 5px 5px;
+    }
+}
+
+/* MOBILE PETIT: moins de 480px */
+@media (max-width: 480px) {
+    header{
+        width: 97%;
+        padding: 8px 10px;
+        border-radius: 15px;
+        top: 5px;
+    }
+    .head-left{
+        gap: 0.8em;
+    }
+    .head-left img{
+        width: 25px;
+        height: 25px;
+    }
+    .head-left button{
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+    .head-right ul{
+        top: 45px;
+        right: 5px;
+        width: 160px;
+        padding: 12px;
+    }
+    .head-right ul li a{
+        font-size: 11px;
+    }
+    .menu-icon i{
+        font-size: 20px;
+    }
+    .hero-section{
+        height: 100vh;
+        margin-top: 40px;
+    }
+    .hero-info{
+        padding: 1.5rem 1rem;
+        top: 40px;
+    }
+    .hero-info h1{
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        margin: 10px 0 8px 0;
+    }
+    .hero-info p{
+        max-width: 250px;
+        font-size: clamp(0.75rem, 0.75vw, 0.9rem);
+    }
+    .hero-info button{
+        padding: 6px 15px;
+        font-size: 11px;
+    }
+    .gaming-text{
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .next-btn{
+        width: 100px;
+        height: 100px;
+        font-size: 12px;
+    }
+    .next-btn:hover{
+        width: 100px;
+        height: 100px;
+    }
+    .about-section{
+        margin-top: 40px;
+        padding: 0 0.8rem;
+    }
+    .about-section h1{
+        font-size: 28px;
+        max-width: 100%;
+        margin: 15px 0;
+    }
+    .about-section h4{
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    .about-section h5{
+        font-size: 12px;
+        max-width: 100%;
+    }
+    .about-section p{
+        font-size: 10px;
+    }
+    .boite{
+        margin: 20px 0;
+    }
+    .image-box{
+        width: 200px;
+        height: 280px;
+    }
+    #stones-img1{
+        width: 18%;
+        left: 15%;
+    }
+    #stones-img2{
+        width: 20%;
+        right: 15%;
+    }
+    .info-section{
+        width: 95%;
+        margin-top: 40px;
+    }
+    .info-section h3{
+        font-size: 18px;
+    }
+    .info-section p{
+        font-size: 11px;
+    }
+    .info-cards{
+        gap: 10px;
+    }
+    .card{
+        height: 28vh;
+    }
+    .card h1{
+        font-size: clamp(1.2rem, 2.5vw, 2rem);
+        top: 10px;
+    }
+    .card p{
+        font-size: 11px;
+        top: 60px;
+    }
+    .card button{
+        font-size: 10px;
+        padding: 5px 12px;
+    }
+    .contact-section{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 0 0.8rem;
+    }
+    .contact-section p{
+        margin-top: 40px;
+        font-size: 10px;
+    }
+    .contact-section h1{
+        font-size: 26px;
+        max-width: 100%;
+    }
+    .contact-section button{
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+    .contact-section .img1{
+        height: 150px;
+        right: 0;
+    }
+    .contact-section .img2{
+        height: 80px;
+        left: 5px;
+    }
+    .contact-section .img3{
+        height: 100px;
+        width: 100px;
+        left: 1%;
+    }
+    .footer{
+        padding: 10px;
+        gap: 8px;
+    }
+    .footer p{
+        margin: 3px 0;
+        font-size: 10px;
+    }
+    .footer a{
+        margin: 0 3px;
+        padding: 4px 4px;
+        font-size: 14px;
     }
 }
