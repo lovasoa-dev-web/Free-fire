@@ -436,7 +436,7 @@ header{
 .footer ul{
     display: flex;
     list-style: none;
-    margin-right: 140px;
+    margin-right: 20px;
 }
 .footer a{
     display: flex;
@@ -445,8 +445,8 @@ header{
     text-decoration: none;
     color: white;
     padding: 7px 7px;
-    border-radius: 50px;
-    border: 1px solid rgb(0, 130, 211);
+    /* border-radius: 50%;
+    border: 1px solid rgb(0, 130, 211); */
     transition: 0.3s;
     margin: 0 10px;
 }
