@@ -366,7 +366,7 @@ header{
 }
 .contact-section .img1{
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 10%;
     height: 400px;
     clip-path: polygon(36% 1%, 100% 0%, 80% 100%, 0% 100%);
